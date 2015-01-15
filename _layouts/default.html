@@ -21,7 +21,7 @@
         <h1>Amplifier</h1>
         <p>2014 project </p>
 
-        <div><a class="page-link" href="/{{ page.url | prepend: site.baseurl }}">Home</a></div>
+        <div><a class="page-link" href="{{ index | prepend: site.baseurl }}">Home</a></div>
         {% for page in site.pages %}
           {% if page.title %}
         <div><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></div>
