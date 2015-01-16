@@ -9,15 +9,16 @@ This is the base Jekyll theme. You can find out more info about customizing your
 You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
 
 
-
-``` python
+{% highlight python %}
 def hello():
     print "howdy howdy howdy"
+{% endhighlight %}
 
-```
 
+    def hello():
+        print "howdy howdy howdy"
 
-```
+{% highlight asm %}
 section	.text
     global _start   ;must be declared for linker (ld)
     _start:	            ;tells linker entry point
@@ -29,8 +30,8 @@ section	.text
 
     mov	eax,1       ;system call number (sys_exit)
     int	0x80        ;call kernel
+{% endhighlight %}
 
-```
 
 
 You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)

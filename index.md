@@ -12,8 +12,12 @@ You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://gi
 
 Here is an image:
 
+<a href="{{ "/images/2015-01-10 23.25.27.jpg" | prepend: site.baseurl }}">
 ![A nice cube]({{ "/images/2015-01-10 23.25.27.jpg" | prepend: site.baseurl }})
+</a>
 
 Here is another:
 
+<a href="{{ "/images/IMG_0013.JPG" | prepend: site.baseurl }}">
 ![The internals]({{ "/images/IMG_0013.JPG" | prepend: site.baseurl }})
+</a>
