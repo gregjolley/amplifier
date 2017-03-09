@@ -1,41 +1,9 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Contact Details
+permalink: /contact/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Email: <a href="mailto:greg.s.jolley@gmail.com">Greg Jolley</a>
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-
-{% highlight python %}
-def hello():
-    print "howdy howdy howdy"
-{% endhighlight %}
-
-
-    def hello():
-        print "howdy howdy howdy"
-
-{% highlight asm %}
-section	.text
-    global _start   ;must be declared for linker (ld)
-    _start:	            ;tells linker entry point
-    mov	edx,len     ;message length
-    mov	ecx,msg     ;message to write
-    mov	ebx,1       ;file descriptor (stdout)
-    mov	eax,4       ;system call number (sys_write)
-    int	0x80        ;call kernel
-
-    mov	eax,1       ;system call number (sys_exit)
-    int	0x80        ;call kernel
-{% endhighlight %}
-
-
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
-
-Here is an image:
-
-![Another Picture of the Internals]({{ "/images/IMG_0013.JPG" | prepend: site.baseurl }})
+Phone: 0439 568 738
