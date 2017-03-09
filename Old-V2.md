@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Old Version
-permalink: /contact/
+permalink: /v2/
 ---
 
 Previous version of the Amplifier designed and constructed in Perth (largely at the Perth hackspace: <a href="http://artifactory.org.au" target="_blank">Artifactory</a>).
