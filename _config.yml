@@ -1,12 +1,29 @@
 # Site settings
-title: Greg Jolley -- Amp project
+title: The design, simulation and characterisation of a class-B audio power amplifier
 email: greg.s.jolley@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Projects by Greg Jolley. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/amplifier" # the subpath of your site, e.g. /blog/
+description: >
+  In this report I describe the design, simulation and characterisation of a novel,
+  high performance, medium power (approx 50 W) class-B audio amplifier. Following a
+  general discussion of amplifier characteristics and design goals, the amplifier
+  schematic is presented and described in detail. SPICE simulation results verify the
+  design and provide further understanding of circuit behaviour. A brief discussion on
+  the methodologies of good PCB design is followed by a presentation of the key
+  experimental characteristics of the amplifier along with a comparison to the characteristics
+  derived by simulation. An amplifier control board which responds to thermal and short-circuit
+  faults and adds radio and alarm clock features is briefly discussed. The final chapter
+  `recommendations for future work' is a reflection upon the strengths and weaknesses of the
+  amplifier design and suggest possible means of improvement.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://gregjolley.github.io" # the base hostname & protocol for your site
 github_username:  gregjolley
+timezone: Australia/Sydney
+theme: jekyll-theme-tactile
+
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock

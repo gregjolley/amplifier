@@ -6,39 +6,67 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="stylesheet" href="{{ "/stylesheets/styles.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ "/stylesheets/font-awesome.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/stylesheets/pygment_trac.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/stylesheets/styles.css" | prepend: site.baseurl }}">
+
+
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
   </head>
 
   <body>
+
     <div class="wrapper">
-      <header>
-        <h1>Amplifier</h1>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 header">
+            <h1 class="site-name">{{site.title}}</h1>
+            <p class="site-tagline"><a href="mailto:{{ site.email }}">Greg Jolley</a></p>
 
-        <div><a class="page-link" href="{{ index | prepend: site.baseurl }}">Home</a></div>
-        {% for page in site.pages %}
-          {% if page.title %}
-        <div><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></div>
-          {% endif %}
-        {% endfor %}
-        </p>
+            <p class="site-tagline">
+              <a href="/media/JollyGS_design_simulation_and_characterisation_of_a_class-B_audio_power_amplifier.pdf" target="_blank">
+                <img src="/images/amplifier_paper.gif" class="img-thumbnail" width="80"></img><br>
+                <small>PDF (6.7M)</small>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
 
-      </header>
-      <section>
+    <section>
+      {{ content }}
+    </section>
 
-{{ content }}
+    </div>
 
-      </section>
       <footer>
-      <p><small>This project is maintained by <a href="mailto:greg.s.jolley@gmail.com">Greg Jolley</a></small></p>
+      <p><small>Author: <a href="mailto:{{ site.email }}">Greg Jolley</a></small></p>
+
+          <ul class="nav-icon">
+            <li><a href="/" class="site-title">{{site.title}}</a></li>
+            <li><a href="/feed.xml" title="Feed" class="hint-top-middle"><i class="fa fa-feed"></i></a></li>
+            <li><a href="https://github.com/{{site.github}}" title="Github" data-hint="Github"  title="Github"><i class="fa fa-github"></i></a></li>
+          </ul>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>

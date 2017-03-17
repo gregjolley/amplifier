@@ -1,11 +1,30 @@
 ---
 layout: default
 ---
-<div class="post">
+<!-- This page specific styling -->
+<style>
+  .center{
+    margin-top: 20px;
+    text-align: justify;
+  }
 
-  <h1 class="post-title">{{ page.title }}</h1>
-  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  .page-title{
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 200%;
+  }
 
-    {{ content }}
-
+</style>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <hr>
+    <br>
+    <h1 class="text-center page-title">{{page.title}}</h1>
+    <p class="text-center"><time>{{ page.date | date: '%B %-d, %Y' }}</time></p>
+    <div class="center">
+      {{content}}
+    </div>
+  </div>
 </div>
+<!-- Back button -->
+<p class="text-center"><a class="home" href="{{site.baseurl}}/" title="Back to Homepage">Home</a></p>
