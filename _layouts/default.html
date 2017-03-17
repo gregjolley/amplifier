@@ -56,16 +56,23 @@ MathJax.Hub.Config({
 
     </div>
 
-      <footer>
-      <p><small>Author: <a href="mailto:{{ site.email }}">Greg Jolley</a></small></p>
+    <footer>
+      <div class="text-center">
+        <p>
+          <small>Author: <a href="/contact/">Greg Jolley</a></small><br>
+          <a href="/" class="site-title">{{site.title}}</a><br>
+        </p>
 
-          <ul class="nav-icon">
-            <li><a href="/" class="site-title">{{site.title}}</a></li>
-            <li><a href="/feed.xml" title="Feed" class="hint-top-middle"><i class="fa fa-feed"></i></a></li>
-            <li><a href="https://github.com/{{site.github_username}}" title="Github" data-hint="Github"  title="Github"><i class="fa fa-github"></i></a></li>
-          </ul>
-      </footer>
-    </div>
+        <ul class="nav-icon">
+          <li><a href="/"><i class="fa fa-microchip"></i></amail></li>
+          <li><a href="/feed.xml" title="Feed" class="hint-top-middle"><i class="fa fa-feed"></i></a></li>
+          <li><a href="mailto:{{ site.email }}"><i class="fa fa-telegram"></i></a></li>
+          <li><a href="https://github.com/{{site.github_username}}" title="Github" data-hint="Github"  title="Github"><i class="fa fa-github"></i></a></li>
+          <li><a href="/contact/" class="site-title"><i class="fa fa-user-circle"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+</div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
