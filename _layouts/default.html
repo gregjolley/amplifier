@@ -37,11 +37,11 @@ MathJax.Hub.Config({
         <div class="row">
           <div class="col-md-6 col-md-offset-3 header">
             <h1 class="site-name">{{site.title}}</h1>
-            <p class="site-tagline"><a href="mailto:{{ site.email }}">Greg Jolley</a></p>
+            <p class="site-tagline"><a href="/contact/">Greg Jolley</a></p>
 
             <p class="site-tagline">
-              <a href="/media/JollyGS_design_simulation_and_characterisation_of_a_class-B_audio_power_amplifier.pdf" target="_blank">
-                <img src="/images/amplifier_paper.gif" class="img-thumbnail" width="80"></img><br>
+              <a href="{{ site.baseurl }}media/JollyGS_design_simulation_and_characterisation_of_a_class-B_audio_power_amplifier.pdf" target="_blank">
+                <img src="{{ site.baseurl }}images/amplifier_paper.gif" class="img-thumbnail" width="80"></img><br>
                 <small>PDF (6.7M)</small>
               </a>
             </p>
@@ -50,7 +50,7 @@ MathJax.Hub.Config({
       </div>
     </header>
 
-    <section>
+    <section class="content">
       {{ content }}
     </section>
 
@@ -62,7 +62,7 @@ MathJax.Hub.Config({
           <ul class="nav-icon">
             <li><a href="/" class="site-title">{{site.title}}</a></li>
             <li><a href="/feed.xml" title="Feed" class="hint-top-middle"><i class="fa fa-feed"></i></a></li>
-            <li><a href="https://github.com/{{site.github}}" title="Github" data-hint="Github"  title="Github"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://github.com/{{site.github_username}}" title="Github" data-hint="Github"  title="Github"><i class="fa fa-github"></i></a></li>
           </ul>
       </footer>
     </div>

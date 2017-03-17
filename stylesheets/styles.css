@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 body {
-  padding:50px;
+  padding: 0 50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  color:#333;
   font-weight:300;
 }
 
@@ -30,6 +30,11 @@ h2 {
 
 h3, h4, h5, h6 {
   color:#494949;
+}
+
+h5 {
+  padding-left: 40px;
+  font-size: 16px;
 }
 
 a {
@@ -83,11 +88,17 @@ header {
 }
 
 
+.content h4,
+.content h5 {
+    margin: 8px;
+}
+
 blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
   padding:0 0 0 20px;
   font-style:italic;
+  font-size:16px;
 }
 
 code, pre {
