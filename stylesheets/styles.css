@@ -57,10 +57,31 @@ header, section, footer {
   width:auto;
 }
 
-header{
-  margin-top: 100px;
+header {
   text-align: center;
 }
+
+.site-name {
+  font-weight: 400;
+  font-size: 200%;
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.site-tagline {
+  line-height: 150%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: 200;
+  font-size: 120%;
+  color: #555555;
+}
+.site-tagline small {
+  margin-top: 2px;
+}
+
 
 blockquote {
   border-left:1px solid #e5e5e5;
