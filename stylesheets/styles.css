@@ -158,6 +158,20 @@ hr {
   margin:0 0 20px;
 }
 
+figure {
+  text-align: center;
+  margin: 25px 0;
+}
+
+figure img {
+    margin-bottom: 10px;
+}
+
+figcaption {
+  font-size:13px;
+  font-style: italic;
+}
+
 footer{
   background-color: #303030;
   padding-bottom: 100px;
