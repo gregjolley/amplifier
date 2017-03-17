@@ -21,47 +21,6 @@ permalink: /project/
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.2}
 
-%\newcommand{\R}{\ensuremath{\mathbb{R}}}
-%\newcommand{\C}{\ensuremath{\mathbb{C}}}
-%\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
-%\newcommand{\NN}{\ensuremath{\mathbb{N}}}
-%\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
-%\newcommand{\Bi}{\ensuremath{\mathrm{Bi}}}
-%\newcommand{\Var}{\ensuremath{\mathrm{Var}}}
-%\newcommand{\spn}{\ensuremath{\mathrm{Span}}}
-%\newcommand{\Tr}{\ensuremath{\mathrm{Tr}}}
-%\newcommand{\diag}{\ensuremath{\mathrm{diag}}}
-
-\newcommand{\curl}{\ensuremath{\boldsymbol{\nabla \times}}}
-\newcommand{\cp}{\ensuremath{\boldsymbol{\times}}}
-\newcommand{\ip}{\ensuremath{\boldsymbol{\cdot}}}
-\newcommand{\divn}{\ensuremath{\boldsymbol{\nabla \cdot}}}
-\newcommand{\mb}{\ensuremath{\mathbf}}
-\newcommand{\ep}{\ensuremath{\epsilon}}
-\newcommand{\p}{\ensuremath{\partial}}
-
-\newcommand{\la}{\ensuremath{\langle}}
-\newcommand{\ra}{\ensuremath{\rangle}}
-\newcommand{\D}{\ensuremath{\Delta}}
-\newcommand{\nn}{\ensuremath{\boldsymbol{\nabla}}}
-\newcommand{\grad}{\ensuremath{\boldsymbol{\nabla}}}
-\newcommand{\omm}{\ensuremath{\omega}}
-\newcommand{\bs}{\ensuremath{\boldsymbol}}
-
-%\newcommand{\curl}{\ensuremath{\mathrm{curl}}}
-%\newcommand{\supp}{\ensuremath{\mathrm{supp}}}
-%\newcommand{\nt}{\noindent}
-%\newcommand{\PP}{\ensuremath{P}}
-%\newcommand{\uu}{\ensuremath{\mathbf{u}}}
-%\newcommand{\vv}{\ensuremath{\mathbf{v}}}
-%\newcommand{\vs}{\ensuremath{\mathbf{s}}}
-%\newcommand{\cc}{\ensuremath{\mathbf{c}}}
-%\newcommand{\dd}{\ensuremath{\mathbf{d}}}
-%\newcommand{\bb}{\ensuremath{\mathbf{b}}}
-%\newcommand{\xx}{\ensuremath{\mathbf{x}}}
-%\newcommand{\nn}{\ensuremath{\mathbf{n}}}
-%\newcommand{\LL}{\ensuremath{\mathcal{L}}}
-%\newcommand{\into}{\ensuremath{\int_{\Omega}}}
 
 \addtolength{\voffset}{-20mm}
 \addtolength{\hoffset}{-25mm}
@@ -170,10 +129,10 @@ Before discussing the amplifier schematic the effect of miller capacitance
 will be quantified since it has a considerable impact upon amplifier design and performance through the phase delay that it induces.
 Referring to figure \ref{miller_sch}, and labelling the AC component of the voltages,
 \begin{eqnarray}
-v_{s}(t) = V_{S}e^{i\omm t}\\
-v_{b}(t) = V_{B}e^{i\omm t}e^{i\phi_{B}}\\
-v_{e}(t) = v_{b}(t)\\
-v_{c}(t) = V_{C}e^{i\omm t}e^{i\phi_{C}}
+  v_{s}(t) = V_{S}e^{i\omega t}\\\
+  v_{b}(t) = V_{B}e^{i\omega t}e^{i\phi_{B}}\\\
+  v_{e}(t) = v_{b}(t)\\\
+  v_{c}(t) = V_{C}e^{i\omega t}e^{i\phi_{C}}
 \end{eqnarray}
 the output voltage, $v_{c}(t)$, as a function of frequency is,
 \begin{equation}
