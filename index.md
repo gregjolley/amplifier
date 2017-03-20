@@ -1,5 +1,6 @@
 ---
 layout: default
+title: The design, simulation and characterisation of a class-B audio power amplifier
 ---
 
 ### Abstract
@@ -14,11 +15,40 @@ strengths and weaknesses of the amplifier design and suggest possible means of i
 
 <br>
 
-#### [Amplifier characteristics and design goals](#amplifier-characteristics-and-design-goals)
-##### Amplifier design methodology
-##### Miller capacitance
+* **[Amplifier characteristics and design goals](#amplifier-characteristics-and-design-goals)**
+  * [Amplifier design methodology](#amplifier-design-methodology)
+  * [Miller capacitance](#miller-capacitance)
+* **[Amplifier Schematic description](#amplifier-schematic-description)**
+* **[SPICE simulations](#spice-simulations)**
+* **[Component Selection](#component-selection)**
+  * [Output transistors](#output-transistors)
+  * [Output driver transistors](#output-driver-transistors)
+  * [Differential input pair transistors](#differential-input-pair-transistors)
+  * [Supply rail decoupling capacitors](#supply-rail-decoupling-capacitors)
+  * [Feedback resistors](#feedback-resistors)
+* **[PCB layout](#pcb-layout)**
+* **[Amplifier characterisation](#amplifier-characterisation)**
+  * [Electrical stability](#electrical-stability)
+  * [Thermal stability - quiescent current drift](#thermal-stability---quiescent-current-drift)
+  * [Noise and hum](#noise-and-hum)
+  * [Open-loop gain](#open-loop-gain)
+  * [Slew rate](#slew-rate)
+  * [Distortion measurements](#distortion-measurements)
+* **[Control board](#control-board)**
+  * [Volume control](#volume-control)
+  * [FM radio receiver](#fm-radio-receiver)
+  * [Real-time clock](#real-time-clock)
+  * [Temperature sensors](#temperature-sensors)
+  * [Display](#display)
+  * [MCU](#mcu)
+  * [Audio source selection](#audio-source-selection)
+  * [User commands](#user-commands)
+* **[Future work](#future-work)**
+* **[Appendix](#appendix)**
+  * [Low-frequency gain](#low-frequency-gain)
+  * [Thermal dissipation of the output transistors - reactive load](#thermal-dissipation-of-the-output-transistors---reactive-load)
 
-#### Amplifier Schematic description
+
 
 <br>
 <hr>
@@ -811,7 +841,7 @@ P_{th} = \frac{V_{supply}}{\pi}\frac{V_{pk}}{Z} - \frac{V^{2}_{pk}}{4Z}\sqrt{1-\
 <a href="{{ "/figures/26_Pth.jpg" | prepend: site.baseurl }}">
 <img src="{{ "/figures/26_Pth.jpg" | prepend: site.baseurl }}" width="500">
 </a>
-<figcaption>Figure . Power dissipated by each output transistor.</figcaption>
+<figcaption>Figure 26. Power dissipated by each output transistor.</figcaption>
 </figure>
 </center>
 

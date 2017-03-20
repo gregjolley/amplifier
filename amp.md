@@ -1,78 +1,41 @@
 ---
 layout: page
-title: Project
+title: The design, simulation and characterisation of a class-B audio power amplifier
 permalink: /project/
 ---
 
 
-\documentclass[a4paper,10pt, oneside]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{lscape}
-\usepackage{rotating}
-\usepackage{epstopdf}
-\usepackage{amsmath,amssymb,mathtools}
-\usepackage{float}
-\usepackage{hyperref}
-\setcounter{secnumdepth}{3}
-
-\setlength{\arrayrulewidth}{0.3mm}
-\setlength{\tabcolsep}{8pt}
-\renewcommand{\arraystretch}{1.2}
-
-
-\addtolength{\voffset}{-20mm}
-\addtolength{\hoffset}{-25mm}
-\textwidth = 170mm
-\textheight = 250mm
-
-%opening
-\title{The design, simulation and characterisation of a class-B audio power amplifier}
-\author{G. Jolley}
-
-\begin{document}
-
-\maketitle
-
-\begin{abstract}
-In this report I describe the design, simulation and characterisation of a novel, high performance,
-medium power ($\approx$ 50 W) class-B audio amplifier. Following a general discussion of amplifier characteristics
-and design goals, the amplifier schematic is presented and described in detail. SPICE simulation results verify the design and provide further understanding of circuit behaviour. A brief discussion on the methodologies of good PCB design is followed by
-a presentation of the key experimental characteristics of the amplifier along with a comparison to the characteristics
-derived by simulation. An amplifier control board which responds to thermal and short-circuit faults and adds radio and alarm
-clock features is briefly discussed. The final chapter `recommendations for future work' is a reflection upon the
-strengths and weaknesses of the amplifier design and suggest possible means of improvement.
-\end{abstract}
 \section{Amplifier characteristics and design goals}
 Conceptually, an audio amplifier has a rather simple task to perform; it must faithfully reproduce an input signal  at a larger output power.
 Audio amplifier parameters of particular interest from a user perspective are:
-\begin{itemize}
- \item Cost
- \item Continuous/momentary output power capability
- \item Noise and hum
- \item Thermal performance and reliability
- \item Speaker short-circuit tolerance/detection
- \item Closed-loop frequency response
- \item Closed-loop gain
- \item Electrical efficiency
- \item Distortion
-\end{itemize}
+
+ * Cost
+ * Continuous/momentary output power capability
+ * Noise and hum
+ * Thermal performance and reliability
+ * Speaker short-circuit tolerance/detection
+ * Closed-loop frequency response
+ * Closed-loop gain
+ * Electrical efficiency
+ * Distortion
+
 From a design perspective the following six parameters are also of particular interest:
-\begin{itemize}
-	\item Open-loop gain and phase delay as a function of frequency
-	\item Margin of electrical stability under various load conditions
-	\item Slew rate
-	\item Power supply rejection ratio
-	\item Thermal stability of quiescent currents
-	\item Open-loop linearity
-\end{itemize}
+
+	* Open-loop gain and phase delay as a function of frequency
+	* Margin of electrical stability under various load conditions
+	* Slew rate
+	* Power supply rejection ratio
+	* Thermal stability of quiescent currents
+	* Open-loop linearity
+
 Ultimately, the main design goals of the amplifier described here are: low-noise, low distortion, fast slew rate and good margin of electrical stability. It must be noted that the average human ear can not identify the distortion content of sound for distortion values
 below about 1\%. In addition, typical distortion values of a speaker are of the order of 1\%. For these reasons the
 pursuit of very low distortion audio amplifiers is usually of academic interest rather than of practical importance. Nothing
 more will be mentioned regarding topics of an audiophile nature.
+
+
 \subsection*{Amplifier design methodology}
-Open-loop non-linearity can be minimised to some degree, however, the inherent non-linearity of transistors and other components prevent a high degree of open-loop linearity. Also, load impedances usually have a frequency dependence and a possible degree of non-linearity. Therefore, the design of a low distortion amplifier mandates the implementation of a negative feedback circuit. A negative feedback circuit with a large loop gain minimises the impact of both non-linearity and noise sources by correcting for the effects of these perturbations. Take into consideration Fig. \ref{feedback}, which is a block diagram of a negative feedback system that consist of linear sub-systems H(s) and F(s). $\textrm{V}_{d}$ is a disturbance voltage which represents the effects of non-linearity or electrical noise.
+Open-loop non-linearity can be minimised to some degree, however, the inherent non-linearity of transistors and other components prevent a high degree of open-loop linearity. Also, load impedances usually have a frequency dependence and a possible degree of non-linearity. Therefore, the design of a low distortion amplifier mandates the implementation of a negative feedback circuit. A negative feedback circuit with a large loop gain minimises the impact of both non-linearity and noise sources by correcting for the effects of these perturbations. Take into consideration Fig. \ref{feedback}, which is a block diagram of a negative feedback system that consist of linear sub-systems H(s) and F(s). $V_{d}$ is a disturbance voltage which represents the effects of non-linearity or electrical noise.
 \begin{figure}
 \vspace{-2cm}
 \begin{centering}
@@ -117,6 +80,8 @@ should be relatively high so that the gain of the amplifier is not excessively c
 compensation capacitance within the frequency band of interest. As a consequence of the necessity of electrical
 stability, adding an arbitrarily large number of gain stages to an amplifier is not a strategy that produces good
 results since this will result in excessive phase delay. A larger phase delay requires a smaller cross-over frequency to maintain stability. Therefore, the gain within the audio band will be excessively limited by the compensation capacitance.
+
+
 \subsubsection*{Miller capacitance}
 \begin{figure}[H]
 \begin{centering}
@@ -226,7 +191,7 @@ The circuit for SPICE analysis is shown in Fig. \ref{sim_sch}, all references to
 The open-loop gain and phase for the optimised component values is shown in Fig.\ref{optimised}. The two differential gain stages results in a very large voltage gain of 130 dB at frequencies less than 100 Hz. The gain reduces with increasing frequency beyond 100 Hz due to the 47 pF compensation capacitor.
 The reduction of open-loop gain with increasing frequency (aside from the influence of other capacitors such as C1 and C2) can considered as the result of the reduction of the load impedance at the output of the 1st differential stage,
 \begin{equation}
-\textrm{gain} \propto \frac{1}{Z}=\frac{1}{\omega\times 47\,\textrm{pF}}
+gain \propto \frac{1}{Z}=\frac{1}{\omega\times 47\,pF}
 \end{equation}
 which equates to -6 dB per octave. The inclusion of capacitors C1 and C2 pushes the gain at 10 kHz to a little over 100 dB.
 The cross-over frequency is modified by C16 which increases the closed-loop gain at higher frequencies to 27k/470 = 57 = 35 dB, giving
@@ -235,11 +200,11 @@ a cross-over frequency a little under 10 MHz and a phase margin of 80 degrees, t
 
 The frequency at which the open-loop gain begins to decrease is given by the relationship,
 \begin{equation}
-\omega\times 47\,\textrm{pF}\times\textrm{gm}_{2}\times\textrm{gm}_{\textrm{D}}\times\textrm{rm}_{\textrm{O}}= Z_{out_{1} }
+\omega\times 47\,pF\timesgm_{2}\timesgm_{D}\timesrm_{O}= Z_{out_{1} }
 \end{equation}
-Where gm$_{2}$ is the transconductance of the 2nd stage, gm$_{\textrm{D}}$ is the transconductance of the driver stage, rm$_{\textrm{O}}$ is the transresistance of the output stage and $Z_{out_{1}}$ is the  impedance as seen at the output of the 1st differential stage. $Z_{out_{1}}$ is the result of the early voltage of Q5 and the load impedance of the 2nd stage input. For more detail see the appendix.
+Where gm$_{2}$ is the transconductance of the 2nd stage, gm$_{D}$ is the transconductance of the driver stage, rm$_{O}$ is the transresistance of the output stage and $Z_{out_{1}}$ is the  impedance as seen at the output of the 1st differential stage. $Z_{out_{1}}$ is the result of the early voltage of Q5 and the load impedance of the 2nd stage input. For more detail see the appendix.
 
-Various transient waveforms for a 1 kHz input signal are shown in Fig \ref{waveforms}. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{\textrm{CE}}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude. A summary of the peak-peak magnitudes of various signals is shown in table \ref{table:1} and stage gains are shown in table \ref{table:2}. The voltage gain of the 1st differential stage is given by,
+Various transient waveforms for a 1 kHz input signal are shown in Fig \ref{waveforms}. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{CE}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude. A summary of the peak-peak magnitudes of various signals is shown in table \ref{table:1} and stage gains are shown in table \ref{table:2}. The voltage gain of the 1st differential stage is given by,
 \begin{equation}
 \frac{\Delta V_{B}Q10}{\Delta V_{B}Q4}
 \end{equation}
@@ -253,7 +218,7 @@ The current gain of the driver stage is given by,
 \end{equation}
 The transresistance of the output stage is given by,
 \begin{equation}
-\frac{\Delta V_{\textrm{out}}}{\Delta I_{C}Q17 + \Delta I_{C}Q22}
+\frac{\Delta V_{out}}{\Delta I_{C}Q17 + \Delta I_{C}Q22}
 \end{equation}
 
 
@@ -273,7 +238,7 @@ It is evident that the gain of all stages apart from the output are largely inde
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	Vout & V$_{\textrm{B}}$ Q4 ($\mu$V) & V$_{\textrm{B}}$ Q10 (mV) & I$_{\textrm{C}}$ Q11+Q13 (mA) & I$_{\textrm{C}}$ Q17 (mA) & I$_{\textrm{C}}$ Q22 (mA) \\ [0.5ex]
+	Vout & V$_{B}$ Q4 ($\mu$V) & V$_{B}$ Q10 (mV) & I$_{C}$ Q11+Q13 (mA) & I$_{C}$ Q17 (mA) & I$_{C}$ Q22 (mA) \\ [0.5ex]
 	\hline\hline 10 & 3.5  & 27.5 & 0.278 & 3.18 & 3.51 \\
 	\hline 20 & 7.68 & 60.9 & 0.616 & 7.18 & 7.84 \\
 	\hline 30 & 12.8 & 102  & 1.03 & 12.3 & 13.2 \\
@@ -292,7 +257,7 @@ It is evident that the gain of all stages apart from the output are largely inde
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline
-	Vout & Av 1st-stage & $g_{m}$ 2nd-stage & A$_{\textrm{I}}$ driver & $r_{m}$ output stage  & total open-loop gain (dB)\\ [0.3ex]
+	Vout & Av 1st-stage & $g_{m}$ 2nd-stage & A$_{I}$ driver & $r_{m}$ output stage  & total open-loop gain (dB)\\ [0.3ex]
 	\hline\hline 10 & 7860 & 0.0101 &25.3& 1490 & 129.4\\
 	\hline 20 & $7930$ & 0.0101 &25.5& 1330 & 128.3\\
 	\hline 30 & $7970$ & 0.0101 &25.7& 1180 & 127.4\\
@@ -301,7 +266,7 @@ It is evident that the gain of all stages apart from the output are largely inde
 	\hline 60 & $8010$ & 0.0101 &26.6& 765 & 123.9\\
 	\hline
 \end{tabular}
-\caption{Summary of gain for various output voltage magnitudes. Av 1st-stage, $g_{m}$ 2nd-stage, A$_{\textrm{I}}$ and $r_{m}$ output stage are the voltage gain of the 1st differential stage, transconductance of the 2nd stage, current gain of the driver and transresistance of the output stage respectively. The transconductance of the 2nd stage is calculated by adding the collector signal current of both Q10 and Q12.}
+\caption{Summary of gain for various output voltage magnitudes. Av 1st-stage, $g_{m}$ 2nd-stage, A$_{I}$ and $r_{m}$ output stage are the voltage gain of the 1st differential stage, transconductance of the 2nd stage, current gain of the driver and transresistance of the output stage respectively. The transconductance of the 2nd stage is calculated by adding the collector signal current of both Q10 and Q12.}
 \label{table:2}
 \end{centering}
 \end{table}
@@ -359,38 +324,38 @@ A long transient simulation with a small time-step was performed for a 10 kHz in
 
 \section{Component Selection}
 The components that have a significant impact upon the amplifier performance thought choice of their type are;
-\begin{itemize}
-	\item Output transistors
-	\item Output driver transistors
-	\item 1st and 2nd differential stage transistors
-\end{itemize}
+
+	* Output transistors
+	* Output driver transistors
+	* 1st and 2nd differential stage transistors
+
 \subsection*{Output transistors}
 NJW0281 (npn) and MJW0302 (pnp) are ideal output stage transistors due to their excellent gain linearity (gain matching within 10\% from
 50 mA to 3 A), exceptionally safe operating area and high transition frequency. The high transition frequency and a relatively small
-output capacitance of 400 pF ($\textrm{V}_{\textrm{CB}}$=10 V) minimises the phase delay at higher frequencies. However, their small early voltage is a significant source of non-linearity.
+output capacitance of 400 pF ($V_{CB}$=10 V) minimises the phase delay at higher frequencies. However, their small early voltage is a significant source of non-linearity.
 \subsection*{Output driver transistors}
-The KSA1220A (pnp) and KSC2690A (npn) are ideal choice as the driver transistors due to their small output capacitance of 19 pF ($\textrm{V}_{\textrm{CB}}$=10 V),
-large gain, and a gain-bandwidth-product of 155 MHz ($V_{\textrm{CE}} = 5 \textrm{V}, \textrm{I}_{\textrm{C}}$ = 0.2 A).
+The KSA1220A (pnp) and KSC2690A (npn) are ideal choice as the driver transistors due to their small output capacitance of 19 pF ($V_{CB}$=10 V),
+large gain, and a gain-bandwidth-product of 155 MHz ($V_{CE} = 5 V, I_{C}$ = 0.2 A).
 \subsection*{Differential input pair transistors}
 MMBT6429 transistors have been chosen for the NPN differential stages due to the following reasons:
-\begin{itemize}
- \item Very large gain
- \item Gain-bandwidth product of about 350 MHz at 5 mA and V$_{\textrm{CE}}$ = 5 V.
- \item High Early voltage
- \item Low-noise
-\end{itemize}
+
+ * Very large gain
+ * Gain-bandwidth product of about 350 MHz at 5 mA and V$_{CE}$ = 5 V.
+ * High Early voltage
+ * Low-noise
+
 \subsection*{Feedback resistors}
 Common resistor technologies (either thin or thick film) are suitable for the majority of the amplifier resistors. Amplifier noise is
 dominated by the noise of the input transistors and associated input resistors, therefore there is some motivation for the use of resistors
 with low excesses-noise.
 \section{PCB layout}
 Consideration to good PCB layout is essential since an inadequate layout can be a major contribution to amplifier hum, electrical instability and distortion. An understanding of the following phenomena is needed in order to design a good layout:
-\begin{itemize}
-	\item Inductive coupling - time dependent current loops can induce voltages around other trace loops.
-	\item Capacitive coupling - traces undergoing voltage transitions can induce voltage fluctuations on other traces.
-	\item Ohmic trace resistance - current will induce a voltage drop across a trace.
-	\item Parasitic inductance and capacitance - can result in an unintentional impact upon the magnitude and phase of analog signals.
-\end{itemize}
+
+	* Inductive coupling - time dependent current loops can induce voltages around other trace loops.
+	* Capacitive coupling - traces undergoing voltage transitions can induce voltage fluctuations on other traces.
+	* Ohmic trace resistance - current will induce a voltage drop across a trace.
+	* Parasitic inductance and capacitance - can result in an unintentional impact upon the magnitude and phase of analog signals.
+
 \begin{figure}[H]
 	% Requires \usepackage{graphicx}
 	\includegraphics[width=10cm]{trace_distortion}
@@ -424,7 +389,7 @@ input sections and no large ground current loops influence the input sections.
 
 \section{Amplifier characterisation} \label{sec:characterisation}
 \subsection*{Electrical stability}
-The electrical stability of the amplifier as a function of $\textrm{I}_{1}$, $\textrm{I}_{2}$ (hence $\textrm{I}_{\textrm{D}}$) and $\textrm{I}_{\textrm{O}}$ was experimented with and the stability was found to be excellent. As explained in chapter XXX, the open-loop gain across all frequencies, and therefore, stability depend on $\textrm{I}_{1}$. Therefore, stability can be examined by performing measurements as a function of $\textrm{I}_{1}$, in particular the response to a square wave input.
+The electrical stability of the amplifier as a function of $I_{1}$, $I_{2}$ (hence $I_{D}$) and $I_{O}$ was experimented with and the stability was found to be excellent. As explained in chapter XXX, the open-loop gain across all frequencies, and therefore, stability depend on $I_{1}$. Therefore, stability can be examined by performing measurements as a function of $I_{1}$, in particular the response to a square wave input.
 
 \subsection*{Thermal stability - quiescent current drift}
 
@@ -442,14 +407,14 @@ output. Wide-band noise was measured with the power amplifier connected to a reg
 The low-noise amplifier was connected to a spectrum analyzer (analog discovery 2, Digilent). The noise spectrum obtained with the amplifier
 input connector, P2, shorted is shown in Fig \ref{noise}. The wide-band noise of the amplifier due to the thermal noise of the input resistors is calculated to be,
 \begin{equation}
-v_{\textrm{noise}}(\textrm{RMS}) = \sqrt{4k_{B}T\left[725
+v_{noise}(RMS) = \sqrt{4k_{B}T\left[725
 \left(\frac{27k}{725}\right)^{2}+\frac{1670}{\sqrt{1+(\omega 1670\times 10^{-6})^{2}}}\left(\frac{27k+725}{725}\right)^{2}+27k\right]}
 \end{equation}
 where 725 is R9+R10 in parallel with R13, 1670 is the resistance setting of trimmer R16, and $10^{-6}$ is the capacitance of C12.
 The frequency dependent term becomes significant for frequencies less than about 100 Hz. For frequencies greater than about 200 Hz the
-calculated noise density due to resistor thermal noise is 131\,\, $\textrm{nV}/\sqrt{\textrm{Hz}}$
+calculated noise density due to resistor thermal noise is 131\,\, $nV/\sqrt{Hz}$
 
-The flat band noise of the amplifier is measured to be -51 dB/10000 =  282 nV/$\sqrt{\textrm{Hz}}$. Upon multiplication by the low-noise
+The flat band noise of the amplifier is measured to be -51 dB/10000 =  282 nV/$\sqrt{Hz}$. Upon multiplication by the low-noise
 amplifier gain, the noise spectral density due to resistor thermal noise is calculated to be $-57.7$ dB. The 6.7 dB difference is consistent with the noise figure of the
 MMBT6429 transistor. The noise voltage over the 20 Hz - 20 kHz band is about $\sqrt{20000-20}\times 282\,nV$ = 40 $\mu V$ RMS.
 Note, the peaks at 50 Hz + harmonics originate from EM interference of the low-noise amplifier input cabling.
@@ -497,18 +462,18 @@ A Si4703 I.C. is chosen as the radio receiver due to one feature in particular -
 It integrates all tuner functions from antenna input to stereo audio output. Basically, when designing the amplifier and control
 board I was not interested in designing something that required RF techniques. However, the Si4703 is a very attractive option due
 to its high performance characteristics. Its most significant features are:
-\begin{itemize}
-	\item Simple 2 or 3-wire digital interface
-	\item Worldwide FM band support (76–108 MHz)
-	\item Seek tuning
-	\item Automatic frequency control (AFC)
-	\item Automatic gain control (AGC)
-	\item Excellent overload immunity
-	\item Signal strength measurement
-	\item Programmable de-emphasis (50/75 $\mu$s)
-	\item Adaptive noise suppression
-	\item Line-level analog output
-\end{itemize}
+
+	* Simple 2 or 3-wire digital interface
+	* Worldwide FM band support (76–108 MHz)
+	* Seek tuning
+	* Automatic frequency control (AFC)
+	* Automatic gain control (AGC)
+	* Excellent overload immunity
+	* Signal strength measurement
+	* Programmable de-emphasis (50/75 $\mu$s)
+	* Adaptive noise suppression
+	* Line-level analog output
+
 A separate board was constructed for the Si4703 which plugs into the control board.
 \subsection*{Real-time clock}
 A PCF2127 I.C. is chosen as the time keeping device. Its most notable feature is an integrated temperature compensated crystal
@@ -524,17 +489,17 @@ temperature, radio and clock parameters, has an LED back-light and has an approp
 SPI port which reduces the MCU pin count requirements.
 \subsection*{MCU}
 The PIC18F47J13 is chosen for the microcontroller device for reasons that include:
-\begin{itemize}
-	\item It is a simple 8-bit MCU which simplifies the writing of code
-	\item A MCU with a small computational throughput is ideal for the control device
-	\item Peripheral pin select - simplifies PCB routing
-	\item SPI port with direct memory access - simplifies writing routines for the LCD
-	\item A change in an I/O pin state can trigger an interrupt for interface to the
+
+	* It is a simple 8-bit MCU which simplifies the writing of code
+	* A MCU with a small computational throughput is ideal for the control device
+	* Peripheral pin select - simplifies PCB routing
+	* SPI port with direct memory access - simplifies writing routines for the LCD
+	* A change in an I/O pin state can trigger an interrupt for interface to the
 	amplifier current fault detection circuit
-	\item Interrupt sources can be assigned to one of two priorities, therefore, a current fault can interrupt any
+	* Interrupt sources can be assigned to one of two priorities, therefore, a current fault can interrupt any
 	low-priority interrupts that are in service
-	\item An internal ADC allows measurement of the amplifier output voltage
-\end{itemize}
+	* An internal ADC allows measurement of the amplifier output voltage
+
 \subsection*{Audio source selection}
 Circuitry is needed to switch between the Si4703 and external audio sources. This is achieved by the use of opamps with a
 shutdown feature that puts the output into a hi-impedance state, see figure \ref{SD}.
@@ -592,7 +557,7 @@ The control board schematic is shown in figures \ref{MCU} to \ref{radio}.
 
 \section{Future work}
 There are two promising and simple modifications that may improve the amplifier design which are now described.
-Experimental characterisation of the amplifier indicated that the output stage quiescent current, $\textrm{I}_{\textrm{O}}$, has an excessive dependence on temperature. It is likely that a small modification to the circuit that limits $\textrm{I}_{\textrm{O}}$ will greatly reduce the sensitivity to temperature, namely, the utilisation of a thermistor or similar. A thermistor in close thermal contact with the output transistors can be used to make a temperature dependent modification to the resistance of potentiometer (R46) such that the sensitivity of $\textrm{I}_{\textrm{O}}$ to temperature is reduced.
+Experimental characterisation of the amplifier indicated that the output stage quiescent current, $I_{O}$, has an excessive dependence on temperature. It is likely that a small modification to the circuit that limits $I_{O}$ will greatly reduce the sensitivity to temperature, namely, the utilisation of a thermistor or similar. A thermistor in close thermal contact with the output transistors can be used to make a temperature dependent modification to the resistance of potentiometer (R46) such that the sensitivity of $I_{O}$ to temperature is reduced.
 
 Two independent constant current sources bias the 2nd differential stage. These two current sources are set approximately equal in magnitude so that the driver stage current is balanced when minimal current is supplied to the 2nd stage input. A more convenient approach replaces one of the current sources with a current mirror such that only a single constant current source is required to bias the 2nd stage.
 
@@ -654,27 +619,27 @@ The 1st line is the load resistance and the 2nd line is a voltage divider correc
 \subsection*{Thermal dissipation of the output transistors - reactive load}
 The real power delivered to a linear load driven by a sinusoidal voltage waveform is given by,
 \begin{equation}
-\frac{1}{T}\int_{0}^{T}dt\,\textrm{V}_{pk}\sin(2\pi t/T)\textrm{I}_{pk}\left[\sqrt{1-\alpha^{2}}\sin(2\pi t/T)+\alpha\cos(2\pi t/T)\right] = \frac{1}{2}\textrm{V}_{pk}\textrm{I}_{pk}\sqrt{1-\alpha^{2}}
+\frac{1}{T}\int_{0}^{T}dt\,V_{pk}\sin(2\pi t/T)I_{pk}\left[\sqrt{1-\alpha^{2}}\sin(2\pi t/T)+\alpha\cos(2\pi t/T)\right] = \frac{1}{2}V_{pk}I_{pk}\sqrt{1-\alpha^{2}}
 \end{equation}
-where $\textrm{V}_{pk}$ and $\textrm{I}_{pk}$ is the peak load voltage and current and $\textrm{T}$ is the period of the sinusoidal waveform.
+where $V_{pk}$ and $I_{pk}$ is the peak load voltage and current and $T$ is the period of the sinusoidal waveform.
 The parameter $\alpha$ takes on values from -1 to 1, representing the fact that the load current may have an arbitrary phase with respect to the load voltage depending on how inductive or capacitive the load is.
 The thermal dissipation of each output transistor (ignoring the small contribution of the quiescent current) is given by,
 \begin{eqnarray}
-P_{th} = \frac{1}{T}\int_{0}^{T/2} \textrm{V}_{supply}\textrm{I}_{pk}\sin(2\pi t/\textrm{T})\,dt\\
--\frac{1}{4}\textrm{V}_{pk}\textrm{I}_{pk}\sqrt{1-\alpha^{2}}
+P_{th} = \frac{1}{T}\int_{0}^{T/2} V_{supply}I_{pk}\sin(2\pi t/T)\,dt\\
+-\frac{1}{4}V_{pk}I_{pk}\sqrt{1-\alpha^{2}}
 \end{eqnarray}
-where $\textrm{V}_{supply}$ is the output transistor collector voltage, i.e. the supply voltage. The integral is the power delivered
+where $V_{supply}$ is the output transistor collector voltage, i.e. the supply voltage. The integral is the power delivered
 to both the load and output transistor and the 2nd term is the real power delivered to the load. For a load impedance of Z$\Omega$ the
 thermal power dissipated by each output transistor becomes,
 \begin{equation}
-P_{th} = \frac{\textrm{V}_{supply}}{\pi}\frac{\textrm{V}_{pk}}{Z} - \frac{\textrm{V}^{2}_{pk}}{4Z}\sqrt{1-\alpha^{2}}
+P_{th} = \frac{V_{supply}}{\pi}\frac{V_{pk}}{Z} - \frac{V^{2}_{pk}}{4Z}\sqrt{1-\alpha^{2}}
 \end{equation}
 \begin{figure}[H]
 	% Requires \usepackage{graphicx}
 	\includegraphics[width=15cm]{Pth}
 	\caption{Power dissipated by each output transistor.}\label{Pth}
 \end{figure}
-Figure \ref{Pth} is a plot of the thermal power dissipated by each output transistor for $\textrm{V}_{supply} = 40V$ and $Z=8\,\Omega$. The
+Figure \ref{Pth} is a plot of the thermal power dissipated by each output transistor for $V_{supply} = 40V$ and $Z=8\,\Omega$. The
 maximum power dissipated for $\alpha=0$ is about 20 W, which increases to 55 W for $\alpha=1$.
 \end{document}
 
@@ -778,8 +743,7 @@ The 1.2pF capacitor (C10) that is in parallel with the feedback resistor signifi
 	\includegraphics[width=7cm]{miller_sch}
 	\caption{miller}\label{miller_equ}
 \end{figure}
-The feedback resistors are $R_{1}=27\textrm{K}\Omega$, and at high frequency $R_{2}=470\Omega$ due to the action of C9. The MMBT6429 data sheet indicates a C$_{CB}$ of about 2 pF at collector base voltage of 5V. To eliminate the phase delay due to input capacitance it is sufficient to set $C_{1}=C_{2}R_{2}/R_{1}$ = 0.035 pF. This is about a factor of 30 from the optimal value of about 1 pF as suggested by simulation. However, the miller effects needs to be taken into consideration.
+The feedback resistors are $R_{1}=27K\Omega$, and at high frequency $R_{2}=470\Omega$ due to the action of C9. The MMBT6429 data sheet indicates a C$_{CB}$ of about 2 pF at collector base voltage of 5V. To eliminate the phase delay due to input capacitance it is sufficient to set $C_{1}=C_{2}R_{2}/R_{1}$ = 0.035 pF. This is about a factor of 30 from the optimal value of about 1 pF as suggested by simulation. However, the miller effects needs to be taken into consideration.
 
-\begin{itemize}
- \item Talk about the reduction of low frequency gain for other input transistors
-\end{itemize}
+
+ * Talk about the reduction of low frequency gain for other input transistors

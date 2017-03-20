@@ -138,6 +138,7 @@ img {
   max-width:100%;
 }
 
+strong a,
 strong {
   color:#222;
   font-weight:700;
@@ -171,7 +172,9 @@ figcaption {
   font-size:13px;
   font-style: italic;
   text-align:center;
-  margin-bottom: 35px;
+  margin: 0 auto 35px auto;
+  width: 450px;
+
 }
 
 footer{
