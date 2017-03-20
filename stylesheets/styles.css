@@ -29,6 +29,7 @@ h2 {
 
 h3, h4, h5, h6 {
   color:#494949;
+  font-weight: bold;
 }
 
 h5 {
@@ -187,6 +188,8 @@ footer{
 
 .nav-icon{
   list-style: none;
+  padding:0;
+  margin:0;
 }
 
 .nav-icon li{
