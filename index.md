@@ -66,7 +66,7 @@ Open-loop non-linearity can be minimised to some degree, however, the inherent n
 <figcaption>Figure 1. Single-input, single-output negative feedback control loop where ${V}_{d}$ represents the effects of non-linearity or noise.</figcaption>
 </figure>
 </center>
-<br>
+
 
 Considering the influence of $V_{d}$, there is a change in the output voltage which is dependent upon the loop-gain,
 
@@ -77,7 +77,7 @@ Considering the influence of $V_{d}$, there is a change in the output voltage wh
 </div>
 
 The disturbance voltage, $V_{d}$, can be considered to be the result of noise or
-non-linearity. In either case the output voltage will reproduce the input voltage to a high degree of fidelity provided the loop-gain, $\textrm{H(s)F(s)}$, is large. As a consequence of the <a href="#feedback">feedback equation</a>, the noise of an amplifier is usually dominated by the noise of those sources that fall outside of the loop, i.e. the input components. The noise characteristics of the amplifier described in this report are measured and analysed in the <a href="#characterisation">characterisation section</a>. Another consequence of the <a href="#feedback">feedback equation</a> is the weak dependence of the closed-loop gain, A, on frequency,
+non-linearity. In either case the output voltage will reproduce the input voltage to a high degree of fidelity provided the loop-gain, $H(s)F(s)}$, is large. As a consequence of the <a href="#feedback">feedback equation</a>, the noise of an amplifier is usually dominated by the noise of those sources that fall outside of the loop, i.e. the input components. The noise characteristics of the amplifier described in this report are measured and analysed in the <a href="#Amplifier-characterisation">characterisation section</a>. Another consequence of the <a href="#feedback">feedback equation</a> is the weak dependence of the closed-loop gain, A, on frequency,
 \begin{equation}
 \textrm{A} = \frac{V_{\textrm{out}}}{V_{\textrm{in}}}=\frac{H(s)}{1+H(s)F(s)}
 \end{equation}
@@ -156,8 +156,8 @@ Taking the 1st order $\omega$ terms the above equation approximates to,
 \phi = \tan^{-1}\omega C\left(R_{L}\left(1+\frac{R_{S}}{R_{E}}\right)+R_{S}\right)
 \end{equation}
 The bandwidth of the single transistor amplifier is determined by $C$, which is transistor dependent, the voltage gain and input resistance, R$_{\textrm{S}}$.
-The important point to note is that phase delay increases with increasing voltage gain and input resistance.
-It is important to consider the phase properties of the voltage amplification stage of an amplifier and eliminate any unnecessary voltage amplification of all other stages. SPICE simulations of the single transistor amplifier shown in <a href="#03_miller_schematic">Fig. 3</a> with and without additional external capacitance are plotted in <a href="#04_miller_plot">Fig. 4</a>, demonstrating the impact of voltage gain on phase delay and bandwidth.
+The important point to note is the phase delay increases with increasing voltage gain and input resistance.
+It is important to consider the phase properties of the voltage amplification stage of an amplifier and eliminate any unnecessary voltage amplification of all other stages. SPICE simulations of the single transistor amplifier shown in <a href="#03_miller_schematic">Fig. 3</a> with and without additional external capacitance are plotted in <a href="#04_miller_plot">Fig. 4</a>, demonstrating the impact of voltage gain on phase delay and bandwidth. The MMBT6429 transistor is a small signal type with a gain-bandwidth in excess of 300 MHz under the bias conditions of the simulations, however, the phase delay is 38 degrees at 10 Mhz for a voltage gain of 23.3 (red trace).
 
 <center>
 <figure id="04_miller_plot">
@@ -173,14 +173,12 @@ SPICE simulations that demonstrate the impact of miller capacitance on the bandw
 
 ### Amplifier Schematic description
 
-The schematic of the amplifier as constructed and characterised is shown in Fig \ref{sch}.
-It consists of four stages, two differential, an output driver, and output stage. The differential gain stages operate in a transconductance mode, i.e. neither are required to generate a significant voltage signal, rather, they are viewed as producing a current signal in response to a small magnitude input voltage signal. The output driver stage consisting of transistors KSA1220A (Q19) and KSC2690A (Q21) is the voltage amplification stage (VAS) and the output stage is a unity gain buffer. C16 (47 pF) connected between the output and the 1st differential stage output is the compensation capacitance. The closed-loop gain is 27k/(470$\times$2) = 28.7 = 29 dB, hence, full-power corresponds to input voltages of 700 mV RMS.
+The schematic of the amplifier as constructed and characterised is shown in <a href="#05_amp_schematic>Figure 5</a>.
+It consists of four stages, two differential, an output driver, and output stage. The differential gain stages operate in a transconductance mode, i.e. neither are required to generate a significant voltage signal, rather, they are viewed as producing a current signal in response to a small magnitude input voltage signal. The output driver stage consisting of transistors KSA1220A (Q19) and KSC2690A (Q21) is the voltage amplification stage (VAS) and the output stage is a unity gain buffer. C16 (47 pF) connected between the output and the 1st differential stage output is the compensation capacitance. The closed-loop gain is 27k/(470$\times$2) = 28.7 = 29 dB, hence, full-power (50 W into 8 $\Omega$) corresponds to input voltages of 700 mV RMS.
 
 The first differential stage incorporates a current mirror which allows straight forward coupling to the 2nd stage input. In addition, the current mirror doubles the transconductance of the 1st stage and hence the low-frequency open-loop gain. Both differential stages are biased by constant current sources and the quiescent current of the 2nd differential stage biases the output driver stage which in-turn biases the output transistors. Therefore, the quiescent current of the 2nd differential
 stage determines the quiescent current of the output driver stage. Hereafter, the quiescent currents of the 1st differential, 2nd differential, output driver and output stages are labelled $I_{1}, I_{2}, I_{D}, $
 and $I_{O}$ respectively. The two constant current sources of the 2nd stage are assumed to be near equal in magnitude. These constant current sources are adjusted by trimmer potentiometers (R21 and R28) such that $I_{D}$ is set to a desired value.
-$I_{O}$ is limited by a BD139 transistor placed across the bases of the output transistors. The BD139 should be in close thermal contact with the output transistors so that there are minimal variations to the relative $V_{BE}$ across temperature,
-therefore, the sensitivity of $I_{O}$ to temperature change is minimised. The sensitivity of $I_{O}$ to temperature has been measured, see the characterisation section.
 
 <center>
 <figure id="05_amp_schematic">
@@ -192,6 +190,9 @@ therefore, the sensitivity of $I_{O}$ to temperature change is minimised. The se
 </figure>
 </center>
 
+
+$I_{O}$ is limited by a BD139 transistor placed across the bases of the output transistors. The BD139 should be in close thermal contact with the output transistors so that there are minimal variations to the relative $V_{BE}$ across temperature,
+therefore, the sensitivity of $I_{O}$ to temperature change is minimised. The sensitivity of $I_{O}$ to temperature has been measured, see the <a href="#Amplifier-characterisation">characterisation</a> section.
 
 The two differential stages operate from supply voltages that are different to that of the VAS and output stage. These supply voltages are generated by zener diode based reference voltages that are buffered by transistors. The positive and negative supplies have
 nominal voltages of 15V and -7V respectively. Separate supplies keep the thermal dissipation of the differential stage transistors to within acceptable limits, reduces voltage stress and broadens the set of transistors that can be utilised
@@ -232,9 +233,45 @@ More analytic detail on the amplifier gain is found in the Appendix.
 
 ### SPICE simulations
 
-The circuit for SPICE analysis is shown in Fig. \ref{sim_sch}, all references to components in this section are with respect to this schematic diagram and the component values for all simulations are as they appear unless otherwise stated. [LTspice](http://www.linear.com/designtools/software) was used for all SPICE simulations. Small signal AC transfer simulations of the closed-loop gain and phase for the optimised component values as shown in the simulation schematic is shown in Fig.\ref{closed}. In-addition, plots are shown for the feedback capacitor, C15=0. The benefits of C15 are clearly evident by the elimination of gain peaking at about 8 MHz and reduction of the phase delay at about the cross-over frequency. Transient simulations indicate that the full-power bandwidth is a little over 1 MHz.
+The circuit for SPICE analysis is shown in <a href="#06_sim_sch">Figure 6</a>, all references to components in this section are with respect to this schematic diagram and the component values for all simulations are as they appear unless otherwise stated. [LTspice](http://www.linear.com/designtools/software) was used for all SPICE simulations.
 
-The open-loop gain and phase for the optimised component values is shown in Fig.\ref{optimised}. The two differential gain stages results in a very large voltage gain of 130 dB at frequencies less than 100 Hz. The gain reduces with increasing frequency beyond 100 Hz due to the 47 pF compensation capacitor.
+<center>
+<figure id="06_sim_sch">
+<a href="{{ "/figures/06_sim_sch.jpg" | prepend: site.baseurl }}">
+<img src="{{ "/figures/06_sim_sch.jpg" | prepend: site.baseurl }}">
+</a>
+<figcaption>Figure 6. Amplifier schematic diagram.
+
+</figcaption>
+</figure>
+</center>
+
+Small signal AC transfer simulations of the closed-loop gain and phase for the optimised component values as shown in the simulation schematic is shown in <a href="#07_closed_optimised">Figure 7</a>. In-addition, plots are shown for the feedback capacitor, C15=0. The benefits of C15 are clearly evident by the elimination of gain peaking at about 8 MHz and reduction of the phase delay at about the cross-over frequency. Transient simulations indicate that the full-power bandwidth is a little over 1 MHz.
+
+<center>
+<figure id="07_closed_optimised">
+<a href="{{ "/figures/07_closed_optimised.png" | prepend: site.baseurl }}">
+<img src="{{ "/figures/07_closed_optimised.png" | prepend: site.baseurl }}" width="500">
+</a>
+<figcaption>Figure 7. Closed-loop gain and phase for optimised component values and for C18 = 0. The advantage of
+  	including a 1.2 pF capacitor within the feed-back loop is clearly seen by the reduction of gain peaking and
+  	improved phase margin for frequencies around cross-over.
+</figcaption>
+</figure>
+</center>
+
+The open-loop gain and phase for the optimised component values is shown in <a href="#08_open_optimised">Figure 8</a>.
+
+<center>
+<figure id="08_open_optimised">
+<a href="{{ "/figures/08_open_optimised.png" | prepend: site.baseurl }}">
+<img src="{{ "/figures/08_open_optimised.png" | prepend: site.baseurl }}" width="500">
+</a>
+<figcaption>Figure 8. Open-loop gain and phase margin for optimised component values.</figcaption>
+</figure>
+</center>
+
+The two differential gain stages results in a very large voltage gain of 130 dB at frequencies less than 100 Hz. The gain reduces with increasing frequency beyond 100 Hz due to the 47 pF compensation capacitor.
 The reduction of open-loop gain with increasing frequency (aside from the influence of other capacitors such as C1 and C2) can considered as the result of the reduction of the load impedance at the output of the 1st differential stage,
 \begin{equation}
 gain \propto \frac{1}{Z}=\frac{1}{\omega\times 47\,pF}
@@ -251,20 +288,19 @@ The frequency at which the open-loop gain begins to decrease is given by the rel
 
 Where $gm_{2}$ is the transconductance of the 2nd stage, $gm_{D}$ is the transconductance of the driver stage, $rm_{O}$ is the transresistance of the output stage and $Z_{out_{1}}$ is the  impedance as seen at the output of the 1st differential stage. $Z_{out_{1}}$ is the result of the early voltage of Q5 and the load impedance of the 2nd stage input. For more detail see the appendix.
 
-Various transient waveforms for a 1 kHz input signal are shown in Fig \ref{waveforms}. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{CE}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude.
+
 
 <center>
-<figure id="06_sim_sch">
-<a href="{{ "/figures/06_sim_sch.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/06_sim_sch.jpg" | prepend: site.baseurl }}">
+<figure id="09_openloop_plots">
+<a href="{{ "/figures/09_openloop_plots.png" | prepend: site.baseurl }}">
+<img src="{{ "/figures/09_openloop_plots.png" | prepend: site.baseurl }}" width="500">
 </a>
-<figcaption>Figure . Amplifier schematic diagram.
-
-</figcaption>
+<figcaption>Figure 9. Open-loop gain and phase plots for optimised, C1 = C2 = 0 and C3 = C4 = 0.</figcaption>
 </figure>
 </center>
 
-A summary of the peak-peak magnitudes of various signals is shown in table \ref{table:1} and stage gains are shown in table \ref{table:2}. The voltage gain of the 1st differential stage is given by,
+
+A summary of the peak-peak magnitudes of various signals is shown in <a href="#table-1">table 1</a> and stage gains are shown in <a href="#table-2">table 2</a>. The voltage gain of the 1st differential stage is given by,
 
 \begin{equation}
 \frac{\Delta V_{B}Q10}{\Delta V_{B}Q4}
@@ -299,9 +335,6 @@ Vout | V$_{B}$ Q4 ($\mu$V) | V$_{B}$ Q10 (mV) | I$_{C}$ Q11+Q13 (mA) | I$_{C}$ Q
 
 <figcaption>Table 1. Summary of various signals, all magnitudes given as peak-peak values.</figcaption>
 
-<br>
-<br>
-
 
 <div id="table-2"></div>
 
@@ -317,44 +350,8 @@ Vout | Av 1st-stage | $g_{m}$ 2nd-stage | A$_{I}$ driver | $r_{m}$ output stage 
 
 <figcaption>Table 2. Summary of gain for various output voltage magnitudes. Av 1st-stage, $g_{m}$ 2nd-stage, A$_{I}$ and $r_{m}$ output stage are the voltage gain of the 1st differential stage, transconductance of the 2nd stage, current gain of the driver and transresistance of the output stage respectively. The transconductance of the 2nd stage is calculated by adding the collector signal current of both Q10 and Q12.</figcaption>
 
-<br>
 
-The response to a square wave input with the input filter capacitor (C16) removed is shown in Fig. \ref{slew} indicating a slew rate of 230V/$\mu$S which is is close to the upper limit calculated in the amplifier schematic description section.
-
-A long transient simulation with a small time-step was performed for a 10 kHz input and a FFT was taken of the output waveform to obtain an indication of the amount of amplifier distortion, see Fig. \ref{fft}
-
-
-<center>
-<figure id="07_closed_optimised">
-<a href="{{ "/figures/07_closed_optimised.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/07_closed_optimised.png" | prepend: site.baseurl }}" width="500">
-</a>
-<figcaption>Figure 7. Closed-loop gain and phase for optimised component values and for C18 = 0. The advantage of
-  	including a 1.2 pF capacitor within the feed-back loop is clearly seen by the reduction of gain peaking and
-  	improved phase margin for frequencies around cross-over.
-</figcaption>
-</figure>
-</center>
-
-
-<center>
-<figure id="08_open_optimised">
-<a href="{{ "/figures/08_open_optimised.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/08_open_optimised.png" | prepend: site.baseurl }}" width="500">
-</a>
-<figcaption>Figure 8. Open-loop gain and phase margin for optimised component values.</figcaption>
-</figure>
-</center>
-
-
-<center>
-<figure id="09_openloop_plots">
-<a href="{{ "/figures/09_openloop_plots.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/09_openloop_plots.png" | prepend: site.baseurl }}" width="500">
-</a>
-<figcaption>Figure 9. Open-loop gain and phase plots for optimised, C1 = C2 = 0 and C3 = C4 = 0.</figcaption>
-</figure>
-</center>
+Various transient waveforms for a 1 kHz input signal are shown in <a href="#10_waveforms">Figure 10</a>. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{CE}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude.
 
 
 <center>
@@ -366,6 +363,7 @@ A long transient simulation with a small time-step was performed for a 10 kHz in
 </figure>
 </center>
 
+The response to a square wave input with the input filter capacitor (C16) removed is shown in <a href="#11_slew">Figure 11</a> indicating a slew rate of 230V/$\mu$S which is is close to the upper limit calculated in the amplifier schematic description section.
 
 <center>
 <figure id="11_slew">
@@ -376,6 +374,7 @@ A long transient simulation with a small time-step was performed for a 10 kHz in
 </figure>
 </center>
 
+A long transient simulation with a small time-step was performed for a 10 kHz input and a FFT was taken of the output waveform to obtain an indication of the amount of amplifier distortion, see <a href="#12_FFT_b">Figure 12</a>.
 
 <center>
 <figure id="12_FFT_b">
@@ -501,8 +500,6 @@ Temperature | Current (mA)
 89 | 104
 
 <figcaption>Table 3. Output stage quiescent current for various heatsink temperatures.</figcaption>
-
-<br>
 
 
 #### Thermal stability - quiescent current drift
@@ -655,63 +652,69 @@ The control board schematic is shown in figures 19 to 23.
 <center>
 <figure id="19_Amp_cont_V3">
 <a href="{{ "/figures/19_Amp_cont_V3.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/19_Amp_cont_V3.png" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/19_Amp_cont_V3.png" | prepend: site.baseurl }}">
 </a>
 <figcaption>Figure 19. Control board schematic - MCU.</figcaption>
 </figure>
 </center>
 
+
 <center>
 <figure id="20_Amp_cont_V3_power">
 <a href="{{ "/figures/20_Amp_cont_V3_power.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/20_Amp_cont_V3_power.png" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/20_Amp_cont_V3_power.png" | prepend: site.baseurl }}" width="650">
 </a>
 <figcaption>Figure 20. Power supply and amplifier switching circuitry of the control board.</figcaption>
 </figure>
 </center>
 
+
 <center>
 <figure id="21_Amp_cont_V3_RTC">
 <a href="{{ "/figures/21_Amp_cont_V3_RTC.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/21_Amp_cont_V3_RTC.png" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/21_Amp_cont_V3_RTC.png" | prepend: site.baseurl }}" width="550">
 </a>
-<figcaption>Figure . Volume control, realtime clock, LCD connections and Si4703 board connections.</figcaption>
+<figcaption>Figure 21. Volume control, realtime clock, LCD connections and Si4703 board connections.</figcaption>
 </figure>
 </center>
+
 
 <center>
 <figure id="22_Amp_cont_V3_SD">
 <a href="{{ "/figures/22_Amp_cont_V3_SD.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/22_Amp_cont_V3_SD.png" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/22_Amp_cont_V3_SD.png" | prepend: site.baseurl }}" width="550">
 </a>
-<figcaption>Figure . Audio source selection circuitry.</figcaption>
+<figcaption>Figure 22. Audio source selection circuitry.</figcaption>
 </figure>
 </center>
+
 
 <center>
 <figure id="23_Si4703">
 <a href="{{ "/figures/23_Si4703.png" | prepend: site.baseurl }}">
-<img src="{{ "/figures/23_Si4703.png" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/23_Si4703.png" | prepend: site.baseurl }}" width="550">
 </a>
-<figcaption>Figure . Radio board schematic.</figcaption>
+<figcaption>Figure 23. Radio board schematic.</figcaption>
 </figure>
 </center>
+
 
 <center>
 <figure id="24_ACB_topJ">
 <a href="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}" width="300">
 </a>
-<figcaption>Figure . Control PCB top layer.</figcaption>
+<figcaption>Figure 24. Control PCB top layer.</figcaption>
 </figure>
 </center>
+
 
 <center>
 <figure id="25_ACB_bottomJ">
 <a href="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}" width="300">
 </a>
-<figcaption>Figure . Control PCB bottom layer.</figcaption>
+<figcaption>Figure 25. Control PCB bottom layer.</figcaption>
 </figure>
 </center>
 
@@ -779,7 +782,7 @@ The output stage transresistance when driving an $8\,\Omega$ is simply $8\beta$.
 \begin{equation}
  8.73\times 10^{3}\times 5.29\times 10^{-3}\times 2\times 25.9\times 1600 = 131.7\,\textrm{dB}
 \end{equation}
-These values can be compared to those listed in table \ref{table:2} which are derived by simulation.
+These values can be compared to those listed in <a href="#table-2">table 2</a> which are derived by simulation.
 
 
 #### Thermal dissipation of the output transistors - reactive load
@@ -813,125 +816,4 @@ P_{th} = \frac{V_{supply}}{\pi}\frac{V_{pk}}{Z} - \frac{V^{2}_{pk}}{4Z}\sqrt{1-\
 </center>
 
 
-Figure \ref{Pth} is a plot of the thermal power dissipated by each output transistor for $V_{supply} = 40V$ and $Z=8\,\Omega$. The
-maximum power dissipated for $\alpha=0$ is about 20 W, which increases to 55 W for $\alpha=1$.
-\end{document}
-
-
-#### Appendix
-
-Register mapping (offset from FSR2):
-[0] - data transfer/temp storage
-[1] - data transfer/temp storage
-[2] - data transfer/temp storage
-[3] - data transfer/temp storage
-[4] - data transfer/temp storage
-[5] - data transfer/temp storage
-[6] - data transfer/temp storage
-[7] - data transfer/temp storage
-[8] - data transfer/temp storage
-[9] - data transfer/temp storage
-[10] - data transfer/temp storage
-[11] - data transfer/temp storage
-[12] T1 processed
-[13] T2 processed
-[14] T3 processed
-[15] T4 processed
-[16] volume
-[17] amplifier status: [7-I_fault_lockout, 6-temperature_lockout, 5-amp_on, 4-audio_source, 3-alarm_on, 2-amp_pwr_change_rqst, 1-re-enter, 0-alarm active]
-[18] T1 raw L
-[19] T1 raw H
-[20] T2 raw L
-[21] T2 raw H
-[22] T3 raw L
-[23] T3 raw H
-[24] T4 raw L
-[25] T4 raw H
-[26]
-[27] hours
-[28] minutes
-[29] seconds
-[30] alarm_hours
-[31] alarm_minute
-[32]
-[33] time_interval for set time [7 - hrs, 6 - minutes, 5 - seconds]
-[34] time_interval for set alarm [7 - hrs, 6 - minutes]
-[35] Si4073_volume
-[36]
-[37]
-[38] Audio_L - truncated 6 bits
-[39] Audio_R - truncated 6 bits
-[40]
-[41] volume_setting_loop and other loop counter
-[42]
-[43]
-[44]
-[45]
-[46]
-[47]
-[48] On and off loop delay reg
-[49] On and off loop delay reg
-[50] On and off loop delay reg
-[51]
-[52]
-[53]
-[54]
-[55]
-[56]
-[57]
-[58]
-[59]
-[60]
-[61]
-[62]
-[63]
-[64]
-[65]
-[66]
-[67]
-[68]
-[69]
-[70]
-[71]
-[72]
-[73]
-[74]
-[75]
-[76]
-[77]
-[78]
-[79]
-
-
-
-
-The 1.2pF capacitor (C10) that is in parallel with the feedback resistor significantly improves the stability margin of the amplifier. Capacitance with respect to the base of input transistor (Q9) in addition to stray capacitance associated with PCB tracks can contribute to the loop phase delay. This particular contribution to the phase delay can be eliminated by including a small capacitance in parallel with the feedback resistor (R8). Referring to Fig. \ref{miller_equ}. the feedback phase delay and magnitude are given by,
-\begin{equation}
-	\phi_{feedback}=\arctan\frac{\omega\left[R_{1}C_{1}-R_{2}C_{2}\right]}{1+R_{2}/R_{1}+\omega^{2}R_{1}R_{2}C_{1}(C_{1}+C_{2})}
-\end{equation}
-\begin{equation}
-	|V_{feedback}|=\frac{\sqrt{R^{2}_{2}+\omega^{2}C^{2}_{2}}}{\sqrt{(R_{1}+R_{2})^{2}+\omega^{2}(C_{1}+C_{2})^{2}}}
-\end{equation}
-\begin{figure}
-	% Requires \usepackage{graphicx}
-	\includegraphics[width=7cm]{miller_sch}
-	\caption{miller}\label{miller_equ}
-    \end{figure}
-
-The feedback resistors are $R_{1}=27K\Omega$, and at high frequency $R_{2}=470\Omega$ due to the action of C9. The MMBT6429 data sheet indicates a C$_{CB}$ of about 2 pF at collector base voltage of 5V. To eliminate the phase delay due to input capacitance it is sufficient to set $C_{1}=C_{2}R_{2}/R_{1}$ = 0.035 pF. This is about a factor of 30 from the optimal value of about 1 pF as suggested by simulation. However, the miller effects needs to be taken into consideration.
-
-
- * Talk about the reduction of low frequency gain for other input transistors
-
-
-
-<center>
-<figure id="replace">
-<a href="{{ "/figures/replace" | prepend: site.baseurl }}">
-<img src="{{ "/figures/replace" | prepend: site.baseurl }}" width="500">
-</a>
-<figcaption>Figure .
-
-</figcaption>
-</figure>
-</center>
+<a href="#26_Pth">Figure 26</a> is a plot of the thermal power dissipated by each output transistor for $V_{supply} = 40V$ and $Z=8\,\Omega$. The maximum power dissipated for $\alpha=0$ is about 20 W, which increases to 55 W for $\alpha=1$.
