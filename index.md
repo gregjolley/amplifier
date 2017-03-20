@@ -263,7 +263,7 @@ More analytic detail on the amplifier gain is found in the Appendix.
 
 ### SPICE simulations
 
-The circuit for SPICE analysis is shown in <a href="#06_sim_sch">Figure 6</a>, all references to components in this section are with respect to this schematic diagram and the component values for all simulations are as they appear unless otherwise stated. [LTspice](http://www.linear.com/designtools/software) was used for all SPICE simulations.
+The circuit for SPICE analysis is shown in <a href="#06_sim_sch">Fig. 6</a>, all references to components in this section are with respect to this schematic diagram and the component values for all simulations are as they appear unless otherwise stated. [LTspice](http://www.linear.com/designtools/software) was used for all SPICE simulations.
 
 <center>
 <figure id="06_sim_sch">
@@ -276,7 +276,7 @@ The circuit for SPICE analysis is shown in <a href="#06_sim_sch">Figure 6</a>, a
 </figure>
 </center>
 
-Small signal AC transfer simulations of the closed-loop gain and phase for the optimised component values as shown in the simulation schematic is shown in <a href="#07_closed_optimised">Figure 7</a>. In-addition, plots are shown for the feedback capacitor, C15=0. The benefits of C15 are clearly evident by the elimination of gain peaking at about 8 MHz and reduction of the phase delay at about the cross-over frequency. Transient simulations indicate that the full-power bandwidth is a little over 1 MHz.
+Small signal AC transfer simulations of the closed-loop gain and phase for the optimised component values as shown in the simulation schematic is shown in <a href="#07_closed_optimised">Fig. 7</a>. In-addition, plots are shown for the feedback capacitor, C15=0. The benefits of C15 are clearly evident by the elimination of gain peaking at about 8 MHz and reduction of the phase delay at about the cross-over frequency. Transient simulations indicate that the full-power bandwidth is a little over 1 MHz.
 
 <center>
 <figure id="07_closed_optimised">
@@ -290,7 +290,7 @@ Small signal AC transfer simulations of the closed-loop gain and phase for the o
 </figure>
 </center>
 
-The open-loop gain and phase for the optimised component values is shown in <a href="#08_open_optimised">Figure 8</a>.
+The open-loop gain and phase for the optimised component values is shown in <a href="#08_open_optimised">Fig. 8</a>.
 
 <center>
 <figure id="08_open_optimised">
@@ -381,7 +381,7 @@ Vout | Av 1st-stage | $g_{m}$ 2nd-stage | A$_{I}$ driver | $r_{m}$ output stage 
 <figcaption>Table 2. Summary of gain for various output voltage magnitudes. Av 1st-stage, $g_{m}$ 2nd-stage, A$_{I}$ and $r_{m}$ output stage are the voltage gain of the 1st differential stage, transconductance of the 2nd stage, current gain of the driver and transresistance of the output stage respectively. The transconductance of the 2nd stage is calculated by adding the collector signal current of both Q10 and Q12.</figcaption>
 
 
-Various transient waveforms for a 1 kHz input signal are shown in <a href="#10_waveforms">Figure 10</a>. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{CE}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude.
+Various transient waveforms for a 1 kHz input signal are shown in <a href="#10_waveforms">Fig. 10</a>. What is interesting is the very non-sinusoidal waveforms of the 1st stage output and the base voltage of Q17. It turns out that the rather small early voltages of the output transistors is the primary influence on the shape of these waveforms. As a function of collector current the current gain of the output transistors are very linear, however, the current gain has quite a strong dependence on V$_{CE}$ leading to a output stage transresistance that is non-linear and dependent on the amplifier output voltage. The voltage on the base of Q4 is close to sinusoidal because the compensation capacitance linearises the load on the 1st stage output. Simulations were performed for a 50 Hz sine wave input of several different magnitudes such that the compensation capacitance has negligible influence on the gain. The low-frequency was chosen to investigate the gain of the various stages of the amplifier as a function of output magnitude.
 
 
 <center>
@@ -393,7 +393,7 @@ Various transient waveforms for a 1 kHz input signal are shown in <a href="#10_w
 </figure>
 </center>
 
-The response to a square wave input with the input filter capacitor (C16) removed is shown in <a href="#11_slew">Figure 11</a> indicating a slew rate of 230V/$\mu$S which is is close to the upper limit calculated in the amplifier schematic description section.
+The response to a square wave input with the input filter capacitor (C16) removed is shown in <a href="#11_slew">Fig. 11</a> indicating a slew rate of 230V/$\mu$S which is is close to the upper limit calculated in the amplifier schematic description section.
 
 <center>
 <figure id="11_slew">
@@ -404,7 +404,7 @@ The response to a square wave input with the input filter capacitor (C16) remove
 </figure>
 </center>
 
-A long transient simulation with a small time-step was performed for a 10 kHz input and a FFT was taken of the output waveform to obtain an indication of the amount of amplifier distortion, see <a href="#12_FFT_b">Figure 12</a>.
+A long transient simulation with a small time-step was performed for a 10 kHz input and a FFT was taken of the output waveform to obtain an indication of the amount of amplifier distortion, see <a href="#12_FFT_b">Fig. 12</a>.
 
 <center>
 <figure id="12_FFT_b">
@@ -542,7 +542,7 @@ The output stage quiescent current temperature dependence was measured by drivin
 The output noise of the amplifier was measured over the 20-1 kHz band using a low-noise amplifier with a gain of 10 000 connected to the
 output. Wide-band noise was measured with the power amplifier connected to a regulated power supply.
 The low-noise amplifier was connected to a spectrum analyzer (analog discovery 2, Digilent). The noise spectrum obtained with the amplifier
-input connector, P2, shorted is shown in <a href="#16_noise_spectrum">Figure 16</a>. The wide-band noise of the amplifier due to the thermal noise of the input resistors is calculated to be,
+input connector, P2, shorted is shown in <a href="#16_noise_spectrum">Fig. 16</a>. The wide-band noise of the amplifier due to the thermal noise of the input resistors is calculated to be,
 \begin{equation}
 v_{noise}(RMS) = \sqrt{4k_{B}T\left[725
 \left(\frac{27k}{725}\right)^{2}+\frac{1670}{\sqrt{1+(\omega 1670\times 10^{-6})^{2}}}\left(\frac{27k+725}{725}\right)^{2}+27k\right]}
@@ -593,7 +593,7 @@ Open-loop gain measurements were successfully performed by connecting a low-nois
 
 
 Slew rate measurements were performed by injecting a square wave into the input with the filter capacitor (C9) removed.
-The output waveform is shown in <a href="#18_slew_meas">Figure 18</a> indicating a slew rate of about 130 V/$\mu S$. This value is significantly less than the calculated slew rate, the difference is attributed to the rise time of the square wave oscillator.
+The output waveform is shown in <a href="#18_slew_meas">Fig. 18</a> indicating a slew rate of about 130 V/$\mu S$. This value is significantly less than the calculated slew rate, the difference is attributed to the rise time of the square wave oscillator.
 
 #### Distortion measurements
 
@@ -670,7 +670,7 @@ The PIC18F47J13 is chosen for the microcontroller device for reasons that includ
 #### Audio source selection
 
 Circuitry is needed to switch between the Si4703 and external audio sources. This is achieved by the use of opamps with a
-shutdown feature that puts the output into a hi-impedance state, see <a href="#22_Amp_cont_V3_SD">Figure 22</a>.
+shutdown feature that puts the output into a hi-impedance state, see <a href="#22_Amp_cont_V3_SD">Fig. 22</a>.
 
 #### User commands
 
@@ -846,4 +846,4 @@ P_{th} = \frac{V_{supply}}{\pi}\frac{V_{pk}}{Z} - \frac{V^{2}_{pk}}{4Z}\sqrt{1-\
 </center>
 
 
-<a href="#26_Pth">Figure 26</a> is a plot of the thermal power dissipated by each output transistor for $V_{supply} = 40V$ and $Z=8\,\Omega$. The maximum power dissipated for $\alpha=0$ is about 20 W, which increases to 55 W for $\alpha=1$.
+<a href="#26_Pth">Fig. 26</a> is a plot of the thermal power dissipated by each output transistor for $V_{supply} = 40V$ and $Z=8\,\Omega$. The maximum power dissipated for $\alpha=0$ is about 20 W, which increases to 55 W for $\alpha=1$.
