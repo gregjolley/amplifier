@@ -107,7 +107,7 @@ Considering the influence of $V_{d}$, there is a change in the output voltage wh
 </div>
 
 The disturbance voltage, $V_{d}$, can be considered to be the result of noise or
-non-linearity. In either case the output voltage will reproduce the input voltage to a high degree of fidelity provided the loop-gain, $H(s)F(s)}$, is large. As a consequence of the <a href="#feedback">feedback equation</a>, the noise of an amplifier is usually dominated by the noise of those sources that fall outside of the loop, i.e. the input components. The noise characteristics of the amplifier described in this report are measured and analysed in the <a href="#Amplifier-characterisation">characterisation section</a>. Another consequence of the <a href="#feedback">feedback equation</a> is the weak dependence of the closed-loop gain, A, on frequency,
+non-linearity. In either case the output voltage will reproduce the input voltage to a high degree of fidelity provided the loop-gain, $H(s)F(s)$, is large. As a consequence of the <a href="#feedback">feedback equation</a>, the noise of an amplifier is usually dominated by the noise of those sources that fall outside of the loop, i.e. the input components. The noise characteristics of the amplifier described in this report are measured and analysed in the <a href="#amplifier-characterisation">characterisation section</a>. Another consequence of the <a href="#feedback">feedback equation</a> is the weak dependence of the closed-loop gain, A, on frequency,
 \begin{equation}
 \textrm{A} = \frac{V_{\textrm{out}}}{V_{\textrm{in}}}=\frac{H(s)}{1+H(s)F(s)}
 \end{equation}
@@ -493,7 +493,7 @@ input sections and no large ground current loops influence the input sections.
 <center>
 <figure id="14_PCB1J">
 <a href="{{ "/figures/14_PCB1J.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/14_PCB1J.jpg" | prepend: site.baseurl }}" width="300">
+<img src="{{ "/figures/14_PCB1J.jpg" | prepend: site.baseurl }}" width="500">
 </a>
 <figcaption>Figure 14. PCB top copper layer with top-layer silk screen.</figcaption>
 </figure>
@@ -503,7 +503,7 @@ input sections and no large ground current loops influence the input sections.
 <center>
 <figure id="15_PCB2J">
 <a href="{{ "/figures/15_PCB2J.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/15_PCB2J.jpg" | prepend: site.baseurl }}" width="300">
+<img src="{{ "/figures/15_PCB2J.jpg" | prepend: site.baseurl }}" width="500">
 </a>
 <figcaption>Figure 15. PCB bottom copper layer with top-layer silk screen.
 
@@ -732,7 +732,7 @@ The control board schematic is shown in figures 19 to 23.
 <center>
 <figure id="24_ACB_topJ">
 <a href="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}" width="300">
+<img src="{{ "/figures/24_ACB_topJ.jpg" | prepend: site.baseurl }}" width="500">
 </a>
 <figcaption>Figure 24. Control PCB top layer.</figcaption>
 </figure>
@@ -742,7 +742,7 @@ The control board schematic is shown in figures 19 to 23.
 <center>
 <figure id="25_ACB_bottomJ">
 <a href="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}" width="300">
+<img src="{{ "/figures/25_ACB_bottomJ.jpg" | prepend: site.baseurl }}" width="500">
 </a>
 <figcaption>Figure 25. Control PCB bottom layer.</figcaption>
 </figure>
@@ -839,7 +839,7 @@ P_{th} = \frac{V_{supply}}{\pi}\frac{V_{pk}}{Z} - \frac{V^{2}_{pk}}{4Z}\sqrt{1-\
 <center>
 <figure id="26_Pth">
 <a href="{{ "/figures/26_Pth.jpg" | prepend: site.baseurl }}">
-<img src="{{ "/figures/26_Pth.jpg" | prepend: site.baseurl }}" width="500">
+<img src="{{ "/figures/26_Pth.jpg" | prepend: site.baseurl }}" width="600">
 </a>
 <figcaption>Figure 26. Power dissipated by each output transistor.</figcaption>
 </figure>
