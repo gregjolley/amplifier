@@ -749,6 +749,16 @@ The control board schematic is shown in figures 19 to 23.
 </center>
 
 
+<center>
+<figure id="finished">
+<a href="{{ "/images/finished.JPG" | prepend: site.baseurl }}">
+<img src="{{ "/images/finished.JPG" | prepend: site.baseurl }}" width="100%" class="img-responsive">
+</a>
+<figcaption>Constructed and housed amplifier and control board.</figcaption>
+</figure>
+</center>
+
+
 ### Future work
 There are two promising and simple modifications that may improve the amplifier design which are now described.
 Experimental characterisation of the amplifier indicated that the output stage quiescent current, $I_{O}$, has an excessive dependence on temperature. It is likely that a small modification to the circuit that limits $I_{O}$ will greatly reduce the sensitivity to temperature, namely, the utilisation of a thermistor or similar. A thermistor in close thermal contact with the output transistors can be used to make a temperature dependent modification to the resistance of potentiometer (R46) such that the sensitivity of $I_{O}$ to temperature is reduced.
